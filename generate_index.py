@@ -185,7 +185,7 @@ body {{ background:#1a2634; color:white; font-family:sans-serif; }}
     <div class="modal-content">
         <h2 id="modal-title"></h2>
 
-        <textarea id="linksArea" style="width:100%; height:200px;"></textarea>
+        <textarea id="linksArea" style="width:100%; height:200px; background:#1e2d3d; color:white; font-family:sans-serif; border:none;" ></textarea>
 
         <div class="mt-4 flex gap-2">
             <button onclick="copyAll()">COPIAR</button>
