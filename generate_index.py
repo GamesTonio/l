@@ -107,6 +107,7 @@ def create_html(cartas, portadas):
 <head>
 <meta charset="UTF-8">
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
 body {{ background:#1a2634; color:white; font-family:sans-serif; }}
@@ -211,12 +212,23 @@ function closeModal() {{
 function copyAll() {{
     const text = document.getElementById("linksArea").value;
     navigator.clipboard.writeText(text);
-    alert("Copiado!");
+    Swal.fire({{
+        title: '¡Copiado!',
+        text: 'Todos los enlaces han sido copiados al portapapeles',
+        icon: 'success',
+        timer: 1500,
+        showConfirmButton: false
+    }});
 }}
 
 function copyText(text) {{
     navigator.clipboard.writeText(text);
-    alert("URL copiada");
+    Swal.fire({{
+        title: 'URL copiada',
+        icon: 'success',
+        timer: 1000,
+        showConfirmButton: false
+    }});
 }}
 
 </script>
