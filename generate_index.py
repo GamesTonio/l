@@ -97,7 +97,7 @@ def create_html(cartas, portadas):
     <div class="card">
         <img src="{img['local']}">
         <div class="name">{img['name']}</div>
-        <button onclick="copyText('{img['url']}')">Copiar URL</button>
+        <button onclick="copyText('{img['url']}')" >Copiar URL</button>
     </div>
     """ for img in portadas])
 
@@ -136,9 +136,12 @@ body {{ background:#1a2634; color:white; font-family:sans-serif; }}
 }}
 
 .card img {{
-    width:100%;
-    height:100px;
-    object-fit:cover;
+    width:100%;  
+    aspect-ratio: 2 / 3;
+    height:auto;
+    border-radius:6px;
+    object-fit:fill;
+    
 }}
 
 .name {{
@@ -183,14 +186,12 @@ body {{ background:#1a2634; color:white; font-family:sans-serif; }}
 
 <!-- MODAL -->
 <div id="modal" class="modal">
-    <div class="modal-content">
-        <h2 id="modal-title"></h2>
-
-        <textarea id="linksArea" style="width:100%; height:200px; background:#1e2d3d; color:white; font-family:sans-serif; border:none;" ></textarea>
-
-        <div class="mt-4 flex gap-2">
-            <button onclick="copyAll()">COPIAR</button>
-            <button onclick="closeModal()">CERRAR</button>
+    <div class="modal-content relative">
+       <button onclick="closeModal()" class="absolute top-2 right-2 bg-red-500 size-8 text-xl  rounded-lg">x</button>
+        <h2 id="modal-title" class="text-2xl font-bold uppercase flex justify-center text-sky-500 pb-4"></h2>
+        <textarea id="linksArea" style="width:100%; height:400px; color:white; font-family:sans-serif; border:none;" class="bg-gray-900 p-2"></textarea>
+        <div class="mt-4 flex justify-center items-center">
+            <button onclick="copyAll()" class="bg-sky-600 px-6 py-2  font-bold text-white rounded-lg">COPIAR</button>            
         </div>
     </div>
 </div>
