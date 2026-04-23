@@ -210,26 +210,27 @@ function closeModal() {{
     document.getElementById("modal").style.display = "none";
 }}
 
+const Toast = Swal.mixin({{
+  toast: true,
+  position: "bottom-end",
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: (toast) => {{
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }}
+}});
+
 function copyAll() {{
     const text = document.getElementById("linksArea").value;
     navigator.clipboard.writeText(text);
-    Swal.fire({{
-        title: '¡Copiado!',
-        text: 'Todos los enlaces han sido copiados al portapapeles',
-        icon: 'success',
-        timer: 1500,
-        showConfirmButton: false
-    }});
+    Toast.fire({{ icon: 'success', title: '¡Copiado!' }});
 }}
 
 function copyText(text) {{
     navigator.clipboard.writeText(text);
-    Swal.fire({{
-        title: 'URL copiada',
-        icon: 'success',
-        timer: 1000,
-        showConfirmButton: false
-    }});
+    Toast.fire({{ icon: 'success', title: 'Copiado' }});
 }}
 
 </script>
