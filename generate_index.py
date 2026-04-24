@@ -95,7 +95,7 @@ def create_html(cartas, portadas):
     # ===== PORTADAS =====
     portadas_html = "".join([f"""
     <div class="card border-2 border-purple-600 p-0 rounded-lg">
-        <img src="{img['local']}">
+        <img src="{img['local']}" class="border-t-lg">
         <div class="name">{img['name']}</div>
         <button class="bg-purple-600 text-white w-full font-bold uppercase rounded-b-lg" onclick="copyText('{img['url']}')" >Copiar URL</button>
     </div>
