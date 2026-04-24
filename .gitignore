@@ -1,0 +1,12 @@
+# Ignorar todo en el directorio raíz
+/*
+
+# Permitir el archivo .gitignore (buena práctica)
+!.gitignore
+
+# Permitir el archivo index.html
+!index.html
+
+# Permitir las carpetas de imágenes y todo su contenido
+!Cartas/
+!Portadas/
