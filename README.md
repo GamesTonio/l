@@ -1,4 +1,6 @@
 # Lottery Cards
+py generate_index.py
+
 # 1. Añade todos los archivos modificados al "área de preparación"
 git add .
 
